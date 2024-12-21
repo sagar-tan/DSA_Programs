@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build C++",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g", // Enable debugging information
+                "${workspaceFolder}/main.cpp", // Your source file
+                "-o",
+                "${workspaceFolder}/a.exe" // Output executable
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task for building C++ code."
+        }
+    ]
+}
