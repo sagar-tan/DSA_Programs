@@ -48,3 +48,32 @@ int main(){
     cout<<q;
 
 }
+//O/1 KnapSack problem
+#include<iostream>
+#include<vector>
+int fxn(vector<int>& weight, vector<int>& profit, int w, int x, int i, int max){
+    if(x==0){
+        return 0;
+    }
+    if(x==1){
+        if(weight[x]<=cap){
+            return profit[0];
+        }
+        else{
+            return 0;
+        }
+    if 
+    }
+
+}
+int main(){
+    int x  = 3;//no of items
+    int capacity = 5;//Capacity
+    vector<int> weight(n, 0);
+    vector<int> profit(n, 0);
+    for(int i==0;i<x;i++){
+        cin>>weight[i];
+        cin>>profit[i];
+    }
+
+}
