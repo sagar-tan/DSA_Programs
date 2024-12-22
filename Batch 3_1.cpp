@@ -1,4 +1,7 @@
 //Climbing Stairs Solution using DP and recursion
+#include<iostream>
+#include<vector>
+using namespace std;
 class Solution {
 public:
     int fxn(int n,vector<int> &dp){
@@ -14,10 +17,16 @@ public:
         
         
     }
+
 };
-
+    int main(){
+        Solution sol;
+        int n = sol.climbStairs(3);
+        cout << n;
+        return 0;
+    }
 //Trying Using DP Using Iteration
-
+/*
 class Solution {
 public:
     int climbStairs(int n) {
@@ -30,3 +39,4 @@ public:
     }
   
 };
+*/
