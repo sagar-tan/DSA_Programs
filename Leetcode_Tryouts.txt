@@ -1,0 +1,24 @@
+//tf
+int findTarget(int nums[], int target){
+    int totalsum = 0;
+    for(int val:nums){
+        totalsum+=val;
+    }
+    int[][] dp = int[n][2*totalsum+1];
+    return solveMemo(nums, n, target, 0, 0, dp);
+}
+int solveMemo(vector<int>& nums, int n, int target, int index, int currsum, dp){
+    if(currsum==target){
+    return 1;
+    }
+    else{
+        return 0;    
+    }
+    if(dp[index][currsum+totalsum]!=1){
+        return;
+    }
+///
+///
+////
+    return dp[index][currsum+totalsum]
+}
