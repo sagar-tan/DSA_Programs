@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<limits.h>
+using namespace std;
 int fxn(int cap, vector<int>& wt, vector<int>& val, int n){
 if (n==0){
     if(wt[n]<=cap){
@@ -20,9 +21,30 @@ for(int i=1;i<n;i++){
         }
         dp[i][w] = max(not_pick, pick);
     }
-    return dp[n-1][cap]
+    return dp[n-1][cap];
 }
 }
 int main(){
+    int n, cap;
+    // Input the number of items and the capacity of the knapsack
+    cout << "Enter the number of items: ";
+    cin >> n;
+    cout << "Enter the capacity of the knapsack: ";
+    cin >> cap;
+    vector<int> wt(n), val(n);
+    // Input the weights of the items
+    cout << "Enter the weights of the items: ";
+    for (int i = 0; i < n; i++) {
+        cin >> wt[i];
+    }
+    // Input the values of the items
+    cout << "Enter the values of the items: ";
+    for (int i = 0; i < n; i++) {
+        cin >> val[i];
+    }
+    // Call the function and output the result
+    int result = fxn(cap, wt, val, n);
+    cout << "The maximum value that can be achieved is: " << result << endl;
+    return 0;
     
 }
