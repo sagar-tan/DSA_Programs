@@ -1,22 +1,36 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-bool canPart_TD(vector<vector<int>>& dp, int index, vector<int>& arr,int n,int target){//Top Down
+bool canPart_rc(int index, vector<int>& arr,int target){//Top Down
     if (target==0){
         return 1;
     }
     if (target<0){
         return false;
     }
-    if (index>=n){
+    if (index>=arr.size()){
         return false;
     }
-    bool include = canPart_TD(dp, index +1, arr, n, target-arr[index]);
-    bool exclude = canPart_TD(dp, index +1, arr, n, target);
+    bool include = canPart_rc(index +1, arr, target-arr[index]);
+    bool exclude = canPart_rc(index +1, arr, target);
     return include||exclude;
-
-
 }
+
+
+
+
+
+
+
+int canPart_TD(vector<vector<int>>&dp, int index, vector<int>& arr, int target){
+    if(target<=0||index>=arr.size())return 0;
+    if (target) return 1;
+    if(dp[index][target]!=-1) return dp[index][target];
+    bool include = canPart_TD(dp, index + 1, arr, target-arr[index]);
+    bool exclude = canPart_TD(dp, index + 1, arr, target);
+    dp[index][target] = (include||exclude);
+}
+
 
 int main(){
 //    vector<int> arr;
@@ -37,7 +51,7 @@ int main(){
     int target = totalsum/2;
     int index = 0;
     vector<vector<int>> dp(n+1, vector<int>(target+1, -1));
-    bool j = canPart_TD(dp, index, arr, n, target);
+    bool j = canPart_TD(dp, index, arr, target);
     if(j){
         cout<<"Can be Divided";
     }
