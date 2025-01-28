@@ -1,8 +1,9 @@
 /*
 kilos = w
 divide the watermelon into two even parts
+compilable with C++14
 */
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 int main(){
     int w;
