@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-struct LinkedList
+struct LinkedList // initialising the list structure
 {
     int data;
     LinkedList* next;
@@ -13,20 +13,20 @@ struct LinkedList
 };
 class Operations {
     private:
-        LinkedList* head;
+        LinkedList* head;// declaring the head pointer, you can declare more for like queue, usme head and tail rehti
     public:
         Operations()
         {
-            head = NULL;
+            head = NULL;//initialising head as null
         }
         void insert_end(int value){
-            LinkedList* newNode = new LinkedList(value);
+            LinkedList* newNode = new LinkedList(value);// baaki ye saari simple commands h, for new node
             if(head == NULL){
                 head = newNode;
             }
             else{
                 LinkedList* temp = head;
-                while(temp->next != NULL){
+                while(temp->next != NULL){//list ke end tk jaane ka traversal
                     temp = temp-> next;
                 }
                 temp->next = newNode;
