@@ -3,7 +3,7 @@
 using namespace std;
 class Solution {
     public:
-        int maxSubArray_Unoptimised(vector<int>& nums) {
+        int maxSubArray_optimised_kadens(vector<int>& nums) {
             int n = nums.size();
             int prevMax=nums[0];
             int maxSum = nums[0];
