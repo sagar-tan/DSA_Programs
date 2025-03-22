@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include<math.h>
 using namespace std;
 class Person{
 private:
@@ -11,8 +12,8 @@ public:
 
     }
     void add(){
-        int area = (3.14)*n1*n1;
-        int circum = 2*(3.14)*n1;
+        int area = M_PI*n1*n1;
+        int circum = 2*M_PI*n1;
         cout <<"area: "<< area << endl;
         cout << "circumference: " << circum;
 
