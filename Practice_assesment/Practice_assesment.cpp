@@ -7,15 +7,13 @@ private:
     int n2;
 public:
     void data_set(){
-        cout << "enter n1" << endl;
+        cout << "enter Rupees" << endl;
         cin >> n1;
 
     }
     void add(){
-        int area = M_PI*n1*n1;
-        int circum = 2*M_PI*n1;
-        cout <<"area: "<< area << endl;
-        cout << "circumference: " << circum;
+        int paise = 100*n1; 
+        cout <<"paise: "<< paise;
 
     }
 
