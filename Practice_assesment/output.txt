@@ -1,2 +1,3 @@
 enter n1
-square: 400cube: 8000
+area: 153
+circumference: 43

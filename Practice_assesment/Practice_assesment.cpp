@@ -11,8 +11,10 @@ public:
 
     }
     void add(){
-        cout <<"square: "<< n1*n1;
-        cout << "cube: " << n1*n1*n1;
+        int area = (3.14)*n1*n1;
+        int circum = 2*(3.14)*n1;
+        cout <<"area: "<< area << endl;
+        cout << "circumference: " << circum;
 
     }
 
