@@ -6,7 +6,7 @@ void fxn(int n,string str, vector<string>& arr){
         arr.push_back(str);
         return;
     }
-    if(n<0){
+    if(n<0){     
         return;
     }
     fxn(n-1,str+"1", arr);
