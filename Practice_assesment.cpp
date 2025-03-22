@@ -1,12 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
-struct Person{
+class Person{
+private:
     string name;
     int age;
+public:
+    void data_set(string n, int a){
+        name = n;
+        age = a;
+    }
+    void show(){
+        cout << name << " " << age;
+    }
+
 };
-
 int main(){
-    Person p1 = {"alice", 20};
+    freopen("output.txt", "w", stdout);
 
-    cout<< p1.age;
+    Person p1;
+    p1.data_set("alice", 15);
+    p1.show();
+   
 }
