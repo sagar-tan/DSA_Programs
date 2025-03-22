@@ -7,13 +7,18 @@ private:
     int n2;
 public:
     void data_set(){
-        cout << "enter Rupees" << endl;
+        cout << "enter total days" << endl;
         cin >> n1;
 
     }
-    void add(){
-        int paise = 100*n1; 
-        cout <<"paise: "<< paise;
+    void finding_years(){
+        int  years = n1/365;
+        n1%=365;
+        int months = n1/30;
+        n1%=30;        
+        cout <<"Years: "<< years<< endl;
+        cout <<"months: "<< months<<endl;
+        cout <<"days: "<<n1;
 
     }
 
@@ -23,6 +28,6 @@ int main(){
     freopen("output.txt", "w", stdout);
     Person p1;
     p1.data_set();
-    p1.add();
+    p1.finding_years();
    
 }
