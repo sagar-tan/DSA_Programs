@@ -8,12 +8,12 @@ public:
     void data_set(){
         cout << "enter n1" << endl;
         cin >> n1;
-        cout << "enter n2" << endl;
-        cin >> n2;
 
     }
     void add(){
-        cout <<"answer: "<< n1+n2;
+        cout <<"square: "<< n1*n1;
+        cout << "cube: " << n1*n1*n1;
+
     }
 
 };

@@ -1,3 +1,2 @@
 enter n1
-enter n2
-answer: 30
+square: 400cube: 8000
