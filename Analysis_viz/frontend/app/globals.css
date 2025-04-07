@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 240, 240, 250;
+  --background-start-rgb: 10, 15, 30;
+  --background-end-rgb: 5, 10, 20;
+  --accent-color: 56, 189, 248; /* Sky blue */
+  --contrast-color: 236, 72, 153; /* Pink */
+  --glass-background: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes subtleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(
+      135deg,
+      rgba(var(--contrast-color), 0.05) 0%,
+      transparent 50%,
+      rgba(var(--accent-color), 0.05) 100%
+    );
+  z-index: -1;
+  background-size: 200% 200%;
+  animation: subtleGradient 15s ease infinite alternate;
+}
+
+@layer utilities {
+  .glass {
+    @apply relative backdrop-blur-md bg-slate-900/60 border border-slate-800/50 shadow-md;
+  }
+  
+  .glass-card {
+    @apply glass rounded-lg backdrop-blur-md bg-slate-900/40 border border-slate-800/40 shadow-md;
+  }
+  
+  .glass-input {
+    @apply glass rounded-md px-3 py-2 bg-slate-900/30 border border-slate-700/40 focus:outline-none focus:ring-1 focus:ring-sky-500/70 focus:border-transparent;
+  }
+  
+  .glass-button {
+    @apply glass rounded-md px-4 py-2 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-600/40 text-white shadow-sm transition-all;
+  }
+  
+  .glass-primary-button {
+    @apply glass rounded-md px-4 py-2 bg-sky-700/70 hover:bg-sky-600/70 border border-sky-600/40 text-white shadow-sm transition-all;
+  }
+  
+  .glass-success-button {
+    @apply glass rounded-md px-4 py-2 bg-emerald-700/70 hover:bg-emerald-600/70 border border-emerald-600/40 text-white shadow-sm transition-all;
+  }
+  
+  .glass-panel {
+    @apply glass p-5 rounded-lg bg-slate-900/30;
+  }
+  
+  .animate-glow {
+    @apply relative;
+  }
+  
+  .animate-glow::after {
+    @apply content-[''] absolute -z-10 left-[10%] top-0 h-[100%] w-[80%] bg-gradient-to-r from-sky-600/5 to-pink-600/5;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+} 
