@@ -1,4 +1,0 @@
-enter total days
-Years: 2
-months: 2
-days: 10
