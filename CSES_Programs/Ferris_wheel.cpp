@@ -3,6 +3,7 @@ using namespace std;
 
 int main() {
     int n, x;
+    cout << "Enter a number";
     cin >> n >> x;
     vector<int> weight(n);
     for (int i = 0; i < n; ++i)
