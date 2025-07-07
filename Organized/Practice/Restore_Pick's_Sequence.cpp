@@ -6,7 +6,7 @@ int query1(vector<int> &arr,int l,int r){
     for(int i = l; i<=r;i++){
         res+=arr[i];
     }
-    return res;
+    cout << res;
 }
 void query2(vector<int> &arr, int l, int r, int x){
     for(int i = l; i<=r;i++){
@@ -18,10 +18,8 @@ void query3(vector<int> &arr, int k, int x){
     arr[k] = x;
 }
 int main(){
-    int n;
-    cin >> n;
-    int m;
-    cin >> m;
+    int n, m;
+    cin << n << m;
     vector<int> arr;
     for(int i=0; i<n; i++){
         cin >> arr[i];
