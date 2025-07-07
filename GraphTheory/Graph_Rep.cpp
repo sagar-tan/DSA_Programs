@@ -9,6 +9,7 @@ vector<vector<int>> buildAdjList(int v, vector<vector<int>> &edges) {
         int from = edges[i][0];
         int to = edges[i][1];
         adj[from].push_back(to);
+        adj[to].push_back(from);
     }
     return adj;
 }
@@ -16,28 +17,26 @@ vector<vector<int>> buildAdjList(int v, vector<vector<int>> &edges) {
 // Display adjacency list
 void displayGraph(int v, vector<vector<int>> &adj) {
     for (int i = 0; i < adj.size(); i++) {
-        cout << "Node " << i << ": ";
+        cout << "Node " << i + 1 << ": ";
         for (int j = 0; j < adj[i].size(); j++) {
-            cout << adj[i][j] << " ";
+            cout << adj[i][j] + 1 << " ";
         }
         cout << endl;
     }
 }
 
+
 int main() {
     int v, e;
-    cout << "No. of Vertices: ";
     cin >> v;
-    cout << "No. of Edges: ";
     cin >> e;
 
     vector<vector<int>> edges;
     for (int i = 0; i < e; i++) {
         int from, to;
-        cout << "Enter from: ";
-        cin >> from;
-        cout << "Enter to: ";
-        cin >> to;
+        cin >> from >> to;
+        from --;
+        to --;
         edges.push_back(vector<int>{from, to});
     }
 
