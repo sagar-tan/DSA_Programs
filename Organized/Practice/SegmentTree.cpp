@@ -7,7 +7,7 @@ int maxtree[4   *MAXN];
 int arr[MAXN];
 void build(int node, int l, int r){
     if(l==r){
-        tree[node] = arr[l];
+        tree[node] = maxtree[node] = arr[l];
         return;
     }
     int mid = (l+r)/2;
@@ -43,7 +43,8 @@ void updateQuery(int node,int idx, int val, int l, int r){
     maxtree[node] = max(maxtree[2*node], maxtree[2*node+1]);
 }
 void modQuery(int node, int ql, int qr, int l, int r, int x){
-    if(maxtree[node]<x || ql>r || qr < l) return;
+    if(ql > r || qr < l) return;
+    if(maxtree[node] < x) return;
     if(l==r){
         tree[node] %= x;
         maxtree[node] = tree[node];
@@ -66,22 +67,41 @@ int main(){
     while(m--){
         int query;
         cin >> query;
+        /*
         if(query == 1){
-            int m, n;
-            cin >> m >> n;
-            int res = addQuery(1, 0, n-1, m-1, n-1);
+            int m, l;
+            cin >> m >> l;
+            int res = addQuery(1, 0, l-1, m-1, n-1);
             cout << res <<endl;
         }
         else if(query == 2){
-            int m, n, x;
-            cin >> m >> n>> x;
-            modQuery(1, m-1, n-1, 0, n-1, x);
+            int m, l, x;
+            cin >> m >> l >> x;
+            modQuery(1, m-1, l-1, 0, n-1, x);
         }
         else if(query == 3){
             int i, x;
             cin >> i >> x;
             updateQuery(1, i-1, x, 0, n-1);
         }
+        */
+        if(query == 1){
+            int l, r;
+            cin >> l >> r;
+            int res = addQuery(1, 0, n-1, l-1, r-1);
+            cout << res << endl;
+        }
+        else if(query == 2){
+            int l, r, x;
+            cin >> l >> r >> x;
+            modQuery(1, l-1, r-1, 0, n-1, x);
+        }
+        else if(query == 3){
+            int i, x;
+            cin >> i >> x;
+            updateQuery(1, i-1, x, 0, n-1);
+        }
+
     }
 
 
