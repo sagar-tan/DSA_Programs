@@ -22,7 +22,7 @@ int maxGoodSub(vector<int> arr, int k, int n){
     }
     return maxSum;
 }
-void display(vector<int> arr, int n){
+void display(vector<int> arr, int n){//just checking!
     for(int i = 0; i< n; i++){
         cout << arr[i];
     }
